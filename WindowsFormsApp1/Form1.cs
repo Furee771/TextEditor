@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
             // получаем выбранный файл
             string filename = saveFileDialog1.FileName;
             // сохраняем текст в файл
-            System.IO.File.WriteAllText(filename, textBox1.Text);
+            File.WriteAllText(filename, textBox1.Text);
             MessageBox.Show("Файл сохранен");
         }
 
@@ -46,7 +46,7 @@ namespace WindowsFormsApp1
             // получаем выбранный файл
             string filename = openFileDialog1.FileName;
             // читаем файл в строку
-            string fileText = System.IO.File.ReadAllText(filename);
+            string fileText = File.ReadAllText(filename);
             textBox1.Text = fileText;
             MessageBox.Show("Файл открыт");
         }
@@ -93,7 +93,7 @@ namespace WindowsFormsApp1
             // получаем выбранный файл
             string filename = saveFileDialog1.FileName;
             // сохраняем текст в файл
-            System.IO.File.WriteAllText(filename, textBox1.Text);
+            File.WriteAllText(filename, textBox1.Text);
             MessageBox.Show("Файл сохранен");
 
         }
@@ -106,7 +106,7 @@ namespace WindowsFormsApp1
             // получаем выбранный файл
             string filename = openFileDialog1.FileName;
             // читаем файл в строку
-            string fileText = System.IO.File.ReadAllText(filename);
+            string fileText = File.ReadAllText(filename);
             textBox1.Text = fileText;
             MessageBox.Show("Файл открыт");
         }
