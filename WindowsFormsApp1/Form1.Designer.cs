@@ -150,21 +150,21 @@
             // копироватьCtrlcToolStripMenuItem
             // 
             this.копироватьCtrlcToolStripMenuItem.Name = "копироватьCtrlcToolStripMenuItem";
-            this.копироватьCtrlcToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.копироватьCtrlcToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.копироватьCtrlcToolStripMenuItem.Text = "копировать  Ctrl+C";
             this.копироватьCtrlcToolStripMenuItem.Click += new System.EventHandler(this.копироватьCtrlcToolStripMenuItem_Click);
             // 
             // вставитьToolStripMenuItem
             // 
             this.вставитьToolStripMenuItem.Name = "вставитьToolStripMenuItem";
-            this.вставитьToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.вставитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.вставитьToolStripMenuItem.Text = "вставить  Ctrl+V";
             this.вставитьToolStripMenuItem.Click += new System.EventHandler(this.вставитьToolStripMenuItem_Click);
             // 
             // ввыToolStripMenuItem
             // 
             this.ввыToolStripMenuItem.Name = "ввыToolStripMenuItem";
-            this.ввыToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.ввыToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ввыToolStripMenuItem.Text = " выразить Ctrl+X";
             this.ввыToolStripMenuItem.Click += new System.EventHandler(this.ввыToolStripMenuItem_Click);
             // 
@@ -369,7 +369,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Текстоваый редактор";
+            this.Text = "Текстовый редактор";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

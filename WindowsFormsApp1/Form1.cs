@@ -32,11 +32,30 @@ namespace WindowsFormsApp1
             // сохраняем текст в файл
             File.WriteAllText(filename, textBox1.Text);
             MessageBox.Show("Файл сохранен");
+            File.WriteAllText("site.t$", filename);
         }
 
         private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (textBox1.TextLength != 0)
+            {
+                DialogResult rez = MessageBox.Show("Блокнот не пуст, желаете сохранить содержимое?", "ВНИМАНИЕ!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rez == DialogResult.Yes)
+                {
+                    SaveFileDialog sfd = new SaveFileDialog();
+                    sfd.FileName = "Название файлa";
+                    sfd.Filter = "*Текстовой редактор|*.txt";
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        File.WriteAllText(sfd.FileName, textBox1.Text);
+                        textBox1.Clear();
+                    }
+                }
+                else if (rez == DialogResult.No)
+                {
+                    textBox1.Clear();
+                }
+            }
         }
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -44,41 +63,52 @@ namespace WindowsFormsApp1
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             // получаем выбранный файл
-            string filename = openFileDialog1.FileName;
+            string filename2 = openFileDialog1.FileName;
             // читаем файл в строку
-            string fileText = File.ReadAllText(filename);
+            string fileText = File.ReadAllText(filename2);
             textBox1.Text = fileText;
+            File.WriteAllText("path.t$", filename2);
             MessageBox.Show("Файл открыт");
         }
 
         private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            textBox1.Text = null;
         }
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            string path = File.ReadAllText("path.t$");
+            File.WriteAllText(path, textBox1.Text);
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void копироватьCtrlcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (textBox1.TextLength > 0)
+            {
+                textBox1.Copy();
+            }
         }
 
         private void вставитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (textBox1.TextLength > 0)
+            {
+                textBox1.Paste();
+            }
         }
 
         private void ввыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (textBox1.TextLength > 0)
+            {
+                textBox1.Cut();
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
